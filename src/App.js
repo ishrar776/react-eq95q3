@@ -41,14 +41,15 @@ export default function App() {
         <p>
           <button onClick={addTodoList}>Add Item</button>
         </p>
-        {/* <p>{todoList}</p> */}
-        {/* <p>
-          {display.map((item) =>
-           <span>{item.txtName}</span> <span>{item.txtAge}</span>
-          )
-          
-          }
-        </p> */}
+        <p>
+          <ul>
+            {todoList.map((item) => (
+              <li id={item.id}>
+                {item.Name} and {item.Age}
+              </li>
+            ))}
+          </ul>
+        </p>
       </div>
     </>
   );
