@@ -1,41 +1,21 @@
 import React, { useState, useEffect } from 'react';
 export default function App() {
-  const [values, setValues] = useState({
-    txtName: '',
-    txtAge: '',
-  });
-  const [display, setDisplay] = useState([]);
-  //useEffect(() => {
-  //  setDisplay();
-  //}, []);
-  const EnterName = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setValues({ ...values, [name]: value });
-  };
-  const EnterAge = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setValues({ ...values, [name]: value });
-  };
-  const saveData = (e) => {
+  const [inputName, setInputName] = useState('');
+  const [inputAge, setInputAge] = useState('');
+  const [todoList, AddTodoList] = useState([]);
+  const addTodoList = (e) => {
     e.preventDefault();
-    const allData = { ...values };
-    let myDB = [];
-    myDB.push(allData);
-    //setDisplay({ myDB });
-    //console.log(allData);
-    console.log(myDB);
-    setDisplay;
-    //const id = display.length + 1;
-    setDisplay((prev) => [
+    AddTodoList;
+    const id = todoList.length + 1;
+    AddTodoList((prev) => [
       ...prev,
       {
-        Name: name,
-        Age: age,
+        id: id,
+        Name: inputName,
+        Age: inputAge,
       },
     ]);
-    console.log(display);
+    console.log(todoList);
   };
   return (
     <>
@@ -45,8 +25,8 @@ export default function App() {
           <input
             type="text"
             name="txtName"
-            value={values.txtName}
-            onChange={EnterName}
+            value={inputName}
+            onInput={(e) => setInputName(e.target.value)}
           />
         </p>
         <p>
@@ -54,13 +34,14 @@ export default function App() {
           <input
             type="text"
             name="txtAge"
-            value={values.txtAge}
-            onChange={EnterAge}
+            value={inputAge}
+            onInput={(e) => setInputAge(e.target.value)}
           />
         </p>
         <p>
-          <input type="submit" onClick={saveData} />
+          <button onClick={addTodoList}>Add Item</button>
         </p>
+        {/* <p>{todoList}</p> */}
         {/* <p>
           {display.map((item) =>
            <span>{item.txtName}</span> <span>{item.txtAge}</span>
