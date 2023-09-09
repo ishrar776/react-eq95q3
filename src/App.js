@@ -1,11 +1,12 @@
 //import "./styles.css";
 import React, { useState } from 'react';
-
 export default function App() {
   const [values, setValues] = useState({
     txtName: '',
     txtAge: '',
   });
+  let myDB = [];
+  const [display, setDisplay] = useState([]);
   const EnterName = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -19,7 +20,11 @@ export default function App() {
   const saveData = (e) => {
     e.preventDefault();
     const allData = { ...values };
+    //let myDB = [];
+    myDB.push(allData);
+    //setDisplay({myDB});
     console.log(allData);
+    console.log(myDB);
   };
   return (
     <>
@@ -45,6 +50,13 @@ export default function App() {
         <p>
           <input type="submit" onClick={saveData} />
         </p>
+        {/* <p>
+          {display.map((item) =>
+           <span>{item.txtName}</span> <span>{item.txtAge}</span>
+          )
+          
+          }
+        </p> */}
       </div>
     </>
   );
