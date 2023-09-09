@@ -1,15 +1,13 @@
-//import "./styles.css";
 import React, { useState, useEffect } from 'react';
 export default function App() {
   const [values, setValues] = useState({
     txtName: '',
     txtAge: '',
   });
-  //let myDB = [];
   const [display, setDisplay] = useState([]);
-  useEffect(() => {
-    setDisplay();
-  }, []);
+  //useEffect(() => {
+  //  setDisplay();
+  //}, []);
   const EnterName = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -25,16 +23,16 @@ export default function App() {
     const allData = { ...values };
     let myDB = [];
     myDB.push(allData);
-    setDisplay({ myDB });
-    console.log(allData);
+    //setDisplay({ myDB });
+    //console.log(allData);
     console.log(myDB);
     setDisplay;
-    const id = display.Length + 1;
+    //const id = display.length + 1;
     setDisplay((prev) => [
       ...prev,
       {
-        id: id,
-        task: input,
+        Name: name,
+        Age: age,
       },
     ]);
     console.log(display);
