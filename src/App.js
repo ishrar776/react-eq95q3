@@ -26,7 +26,7 @@ export default function App() {
             type="text"
             name="txtName"
             value={inputName}
-            onInput={(e) => setInputName(e.target.value)}
+            onChange={(e) => setInputName(e.target.value)}
           />
         </p>
         <p>
@@ -35,7 +35,7 @@ export default function App() {
             type="text"
             name="txtAge"
             value={inputAge}
-            onInput={(e) => setInputAge(e.target.value)}
+            onChange={(e) => setInputAge(e.target.value)}
           />
         </p>
         <p>
