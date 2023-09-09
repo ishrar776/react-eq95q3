@@ -28,6 +28,8 @@ export default function App() {
     setDisplay({ myDB });
     console.log(allData);
     console.log(myDB);
+    setDisplay;
+    const id = display.length + 1;
     setDisplay((prev) => [
       ...prev,
       {
