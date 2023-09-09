@@ -28,6 +28,14 @@ export default function App() {
     setDisplay({ myDB });
     console.log(allData);
     console.log(myDB);
+    setDisplay((prev) => [
+      ...prev,
+      {
+        id: id,
+        task: input,
+      },
+    ]);
+    console.log(display);
   };
   return (
     <>
