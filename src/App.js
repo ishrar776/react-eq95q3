@@ -1,12 +1,15 @@
 //import "./styles.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 export default function App() {
   const [values, setValues] = useState({
     txtName: '',
     txtAge: '',
   });
-  let myDB = [];
+  //let myDB = [];
   const [display, setDisplay] = useState([]);
+  useEffect(() => {
+    setDisplay();
+  }, []);
   const EnterName = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -20,9 +23,9 @@ export default function App() {
   const saveData = (e) => {
     e.preventDefault();
     const allData = { ...values };
-    //let myDB = [];
+    let myDB = [];
     myDB.push(allData);
-    //setDisplay({myDB});
+    setDisplay({ myDB });
     console.log(allData);
     console.log(myDB);
   };
