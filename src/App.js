@@ -29,7 +29,7 @@ export default function App() {
     console.log(allData);
     console.log(myDB);
     setDisplay;
-    const id = display.length + 1;
+    const id = display.Length + 1;
     setDisplay((prev) => [
       ...prev,
       {
